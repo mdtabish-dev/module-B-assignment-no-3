@@ -1,4 +1,4 @@
-// ==================== GLOBAL SCOPE ====================
+// Global Scope
 var globalVar = "I'm global var";
 let globalLet = "I'm global let";
 const globalConst = "I'm global const";
@@ -7,7 +7,7 @@ console.log(globalVar);
 console.log(globalLet);
 console.log(globalConst);
 
-// ==================== FUNCTION SCOPE ====================
+// Function Scope
 function myFunction() {
     var functionVar = "I'm function var";
     let functionLet = "I'm function let";
@@ -18,7 +18,7 @@ function myFunction() {
 }
 myFunction();
 
-// ==================== BLOCK SCOPE ====================
+// Block Scope
 if (true) {
     var blockVar = "I'm block var";
     let blockLet = "I'm block let";
@@ -32,22 +32,22 @@ console.log(blockVar); // Accessible due to var's function scope
 // console.log(blockLet);  Uncaught ReferenceError: blockLet is not defined
 // console.log(blockConst); Uncaught ReferenceError: blockConst is not defined   
 
-// ==================== HOISTING WITH VAR ====================
+// Hoisting With Var
 console.log(hoistedVar); // undefined (not ReferenceError)
 var hoistedVar = "I'm hoisted var";
 console.log(hoistedVar); // "I'm hoisted var"
 
-// ==================== HOISTING WITH LET ====================
+// Hoisting With Let
 // console.log(hoistedLet); Uncaught ReferenceError: Cannot access 'hoistedLet' before initialization
 let hoistedLet = "I'm hoisted let";
 console.log(hoistedLet); // "I'm hoisted let"
 
-// ==================== HOISTING WITH CONST ====================
+// Hoisting With Const
 // console.log(hoistedConst); Uncaught ReferenceError: Cannot access 'hoistedConst' before initialization
 const hoistedConst = "I'm hoisted const";
 console.log(hoistedConst); // "I'm hoisted const"
 
-// ==================== REDECLARATION ====================
+// Redeclaration
 
 var redeclareVar = "First declaration";
 var redeclareVar = "Second declaration";
@@ -59,7 +59,7 @@ console.log(redeclareVar); // "Second declaration"
 // const redeclareConst = "First declaration";
 // const redeclareConst = "Second declaration"; // Uncaught SyntaxError: Identifier 'redeclareConst' has already been declared
 
-// ==================== REASSIGNMENT ====================
+// Reassignment
 
 var reassignVar = "Initial value";
 reassignVar = "Reassigned value";
@@ -73,7 +73,7 @@ const reassignConst = "Initial value";
 // reassignConst = "Reassigned value"; // Uncaught TypeError: Assignment to constant variable.
 console.log(reassignConst); // "Initial value"
 
-// ==================== TDZ (Temporal Dead Zone) ====================
+// TDZ (Temporal Dead Zone)
 
 if (true) {
     // console.log(tdzLet); // ReferenceError
@@ -90,7 +90,7 @@ if (true) {
 // Error: ReferenceError - Cannot access variable before initialization.
 // Reason: let and const declaration se pehle use nahi hotay. Is period ko TDZ kehte hain.
 
-// ==================== WHEN TO USE VAR, LET, AND CONST ====================
+// When To Use Var, Let, And Const
 
 // var: old JavaScript ya function-scoped variable ke liye
 function varExample() {
@@ -108,34 +108,34 @@ console.log(marks);
 const schoolName = "ABC School";
 console.log(schoolName);
 
-// ==================== STRING INTERPOLATION ====================
+// String Interpolation
 
 const firstName = "Ahmed";
 const lastName = "Ali";
 const fullName = `${firstName} ${lastName}`;
 console.log(fullName);
 
-// ==================== MULTI-LINE STRINGS ====================
+// Multi-Line Strings
 const multiLineString = `Name: Ali
 Age: 20
 City: Karachi`;
 console.log(multiLineString);
 
-// ==================== SIMPLE EXPRESSIONS ====================
+// Simple Expressions
 
 const x = 5;
 const y = 10;
 const sum = `${x} + ${y} = ${x + y}`;
 console.log(sum);
 
-// ==================== FUNCTION CALLS  ====================
+// Function Calls
 
 const multiply = (a, b) => a * b;
 console.log(`Product of 8 and 7 is ${multiply(8, 7)}`);
 
-// ====================TAGGED TEMPLATE LITERALS  ====================
+// Tagged Template Literals
 
-// 1. Simple Tagged Template
+// Simple Tagged Template
 function logTag(strings) {
   console.log(strings[0]); // "Hello World"
 }
@@ -143,20 +143,20 @@ function logTag(strings) {
 logTag`Hello World`;
 
 
-// 2. Uppercase Formatting Tag
+// Uppercase Formatting Tag
 function upperTag(strings) {
   return strings[0].toUpperCase();
 }
 
 console.log(upperTag`hello world`);
 
-//===================== Conditional Logic =====================
+// Conditional Logic
 
 const hours= new Date().getHours();
 const greeting = hours < 12 ? "Good Morning" : "Good Afternoon";
 console.log(greeting);
 
-//===================== Looping with Template Literals =====================
+// Looping With Template Literals
 
 let itemList = ["Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grape", "Honeydew", "Indian Fig", "Jackfruit"];
 let htmlList = `<ul>
@@ -164,12 +164,12 @@ ${itemList.map(item => `<li>${item}</li>`).join('')}
 </ul>`;
 document.writeln(htmlList);
 
-// ==================== Escaping backticks ====================
+// Escaping Backticks
 
 const escaped = `The backtick character is \` like this`;
 console.log(escaped);
 
-//===================== Nesting Template Literals ====================
+// Nesting Template Literals
 
 let data = [
   ["Name", "Age", "City"],
@@ -190,25 +190,25 @@ let table = `
 
 document.writeln(table);
 
-// ==================== Simple Condition ====================
+// Simple Condition
 
 let age=22;
 let canVote = age >= 18 ? "Yes, you can vote!" : "No, you cannot vote.";
 console.log(canVote);
 
-//===================== Even or Odd =====================
+// Even Or Odd
 
 let number=154;
 let evenOrOdd= number%2===0 ? 'Even Number': 'Odd Number';
 console.log(evenOrOdd);
 
-//=====================Grade Evaluation====================
+// Grade Evaluation
 
 let studentMarks=45;
 let grade= studentMarks >= 90 ? 'A+' : studentMarks >= 80 ? 'A' : studentMarks >= 70 ? 'B' : studentMarks >= 60 ? 'C' :studentMarks >= 50 ? 'D' : 'F';
 console.log(`Your grade is: ${grade}`);
 
-//===================== Login Check ===================== 
+// Login Check
 
 function checkLogin() {
   let username = document.getElementById("username").value;
@@ -217,7 +217,7 @@ function checkLogin() {
   document.getElementById("message").innerText = statusMessage;
 }
 
-//===================== Discount Eligibility =====================let isMember = true;
+// Discount Eligibility
 let isMember = true;
 let purchaseAmount = 250;
 
@@ -227,14 +227,14 @@ let discount = (isMember && purchaseAmount > 100)
 
 console.log(discount);
 
-//===================== Determine max value =====================
+// Determine Max Value
 
 function maxValue(a, b) {
   return a > b ? a : b;
 }
 console.log(maxValue(10, 20));
 
-//===================== Greeting Message =====================
+// Greeting Message
 
 function greet(name) {
   return name ? `Hello, ${name}!` : "Hello, guest!";
@@ -244,20 +244,20 @@ console.log(greet(""));
 console.log(greet());
 
 
-//===================== Mapping values =====================
+// Mapping Values
 
 let numbers =[1,2,3,4,5,6,7,8,9,10];
 let newNumbers =numbers.map(num => num % 2 === 0 ? num * 2 : num * 3);
 console.log(newNumbers);
 
-//===================== filtering values =====================
+// Filtering Values
 
 const stringArray = ["cat", "elephant", "dog", "tiger", "bird", "butterfly"];
 const longStrings = stringArray.filter(str => str.length > 3);
 console.log("Original array:", stringArray);
 console.log("Strings with length > 3:", longStrings);
 
-// COPYING AN ARRAY
+// Copying An Array
 
 const originalArray = [10, 20, 30, 40, 50];
 const copiedArray = [...originalArray];
@@ -265,7 +265,7 @@ console.log("Original Array:", originalArray);
 console.log("Copied Array:", copiedArray);
 console.log("Same reference?", originalArray === copiedArray);
 
-// MERGING ARRAYS
+// Merging Arrays
 
 const arrayA = [1, 2, 3];
 const arrayB = [4, 5, 6];
@@ -276,13 +276,13 @@ console.log(mergedArray);
 
 
 
-// ADDING ELEMENTS TO ARRAY
+// Adding Elements To Array
 const numbers2 = [20, 30, 40];
 console.log(numbers2);
 const updatedNumbers = [10, ...numbers2, 50];
 console.log(updatedNumbers);
 
-// // COPYING AN OBJECT
+// Copying An Object
 const originalObject = {
   name: "Ali",
   age: 20,
@@ -293,7 +293,7 @@ console.log("Original Object:", originalObject);
 console.log("Copied Object:", copiedObject);
 console.log("Same reference?", originalObject === copiedObject);
 
-// // MERGING OBJECTS
+// Merging Objects
 
 const object1 = {
   name: "Product A",
@@ -314,7 +314,7 @@ console.log(object1);
 console.log(object2);
 console.log(mergedObject);
 
-// UPDATING OBJECT PROPERTIES
+// Updating Object Properties
 
 const user = {
   name: "John Doe",
@@ -332,7 +332,7 @@ const updatedUser = {
 
 console.log(updatedUser);
 
-//Passing Array Elements as Arguments: 
+// Passing Array Elements As Arguments
 
 function addThreeNumbers(a, b, c) {
   return a + b + c;
@@ -340,7 +340,7 @@ function addThreeNumbers(a, b, c) {
 const numbers3 = [10, 20, 30];
 console.log(addThreeNumbers(...numbers3));
 
-//Combining Multiple Arrays:
+// Combining Multiple Arrays
 
 function combineArrays(...arrays) {
   return [].concat(...arrays);
@@ -379,17 +379,17 @@ function average(...nums) {
 }
 console.log(average(2, 4, 6));
 
-// First and Rest (Array)
+// First And Rest (Array)
 const destructuringNumbers = [1, 2, 3, 4, 5];
 const [first, ...rest] = destructuringNumbers;
 console.log(first, rest);
 
-// Skip and Rest (Array)
+// Skip And Rest (Array)
 const colors = ["red", "green", "blue", "yellow", "black"];
 const [, , ...remainingColors] = colors;
 console.log(remainingColors);
 
-// Object Destructuring with Rest
+// Object Destructuring With Rest
 const person = {
   name: "Ali",
   age: 20,
@@ -417,7 +417,7 @@ function filterEven(...nums) {
 }
 console.log(filterEven(1, 2, 3, 4, 5, 6));
 
-// Combine and Sort Arrays
+// Combine And Sort Arrays
 function combineAndSort(...arrays) {
   return arrays.flat().sort((a, b) => a - b);
 }
@@ -433,7 +433,7 @@ const colors2 = ["red", "green", "blue", "yellow"];
 const [primaryColor, , tertiaryColor] = colors2;
 console.log(primaryColor, tertiaryColor);
 
-// Rest in Array Destructuring
+// Rest In Array Destructuring
 const numsArr = [1, 2, 3, 4, 5];
 const [firstNumber, ...remainingNumbers] = numsArr;
 console.log(firstNumber, remainingNumbers);
@@ -453,12 +453,12 @@ const settings = { theme: "dark" };
 const { theme, language = "English" } = settings;
 console.log(theme, language);
 
-// Array of Arrays Destructuring
+// Array Of Arrays Destructuring
 const nested = [[1, 2], [3, 4], [5, 6]];
 const [[nestedFirst], [nestedSecond], [nestedThird]] = nested;
 console.log(nestedFirst, nestedSecond, nestedThird);
 
-// Object within Object
+// Object Within Object
 const profile = {
   username: "tabish",
   details: { email: "t@gmail.com", address: "Karachi" }
@@ -467,7 +467,7 @@ const profile = {
 const { username, details: { email: profileEmail, address } } = profile;
 console.log(username, profileEmail, address);
 
-// Mix Arrays and Objects
+// Mix Arrays And Objects
 const mixedData = {
   id: 1,
   info: [{ name: "Alice" }, { age: 25 }]
@@ -519,7 +519,7 @@ Object.values(accountUser).forEach(val => console.log(val));
 const car2 = { make: "Toyota", model: "Corolla", year: 2022 };
 console.log(Object.entries(car2));
 
-// Convert Object to Array
+// Convert Object To Array
 const person3 = { firstName: "Ali", lastName: "Khan", age: 25 };
 console.log(Object.entries(person3));
 
@@ -529,7 +529,7 @@ Object.entries(settings2).forEach(([key, value]) => {
   console.log(key, value);
 });
 
-// Filter Keys by Value
+// Filter Keys By Value
 const inventory = { apples: 5, bananas: 20, oranges: 15, grapes: 8 };
 const resultKeys = Object.keys(inventory).filter(key => inventory[key] > 10);
 console.log(resultKeys);
@@ -555,7 +555,7 @@ const swapped = Object.fromEntries(
 console.log("Key-Value Swap:", swapped);
 
 
-// Filter and Map
+// Filter And Map
 const number4 = [1,2,3,4,5,6,7,8,9,10];
 
 function filterAndMap(arr, filterFn, mapFn) {
@@ -571,7 +571,7 @@ const result1 = filterAndMap(
 console.log("Filter and Map:", result1);
 
 
-// Sort and Reduce
+// Sort And Reduce
 const words = ["apple", "banana", "cherry", "date"];
 
 function sortAndReduce(arr, sortFn, reduceFn) {
@@ -621,7 +621,7 @@ const add = (a, b) => a + b;
 console.log("Arrow Function:", add(3, 5));
 
 
-// Arrow with Map
+// Arrow With Map
 const nums = [1,2,3,4,5];
 
 const squared = nums.map(n => n * n);
@@ -678,3 +678,195 @@ function calculateArea(width = 10, height = 5) {
 
 console.log("Area Default:", calculateArea());
 console.log("Area Custom:", calculateArea(20, 10));
+
+// Square Numbers
+const numbers1 = [1, 2, 3, 4, 5];
+const squared = numbers1.map(n => n * n);
+console.log(squared);
+
+// Uppercase
+const words1 = ["apple", "banana", "cherry"];
+const upper = words1.map(w => w.toUpperCase());
+console.log(upper);
+
+// Filter Even Numbers
+const numbers2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const evens = numbers2.filter(n => n % 2 === 0);
+console.log(evens);
+
+// Filter Long Words
+const words2 = ["apple", "banana", "cherry", "date"];
+const longWords = words2.filter(w => w.length > 5);
+console.log(longWords);
+
+// For Each Numbers
+const numbers3 = [1, 2, 3, 4, 5];
+numbers3.forEach(n => console.log(n));
+
+// For Each Word Length
+const words3 = ["apple", "banana", "cherry"];
+words3.forEach(w => console.log(w.length));
+
+// Sum Of Numbers
+const sumArr = [1, 2, 3, 4, 5];
+const sum = sumArr.reduce((acc, val) => acc + val, 0);
+console.log(sum);
+
+// Concat Strings
+const words4 = ["Hello", "world", "this", "is", "JavaScript"];
+const sentence = words4.reduce((acc, val) => acc + " " + val);
+console.log(sentence);
+
+// Some (Even Check)
+const arr1 = [1, 3, 5, 7, 8];
+console.log(arr1.some(n => n % 2 === 0));
+
+// Some (Long Word)
+const arr2 = ["apple", "banana", "cherry", "date"];
+console.log(arr2.some(w => w.length > 5));
+
+// Every (All Even)
+const arr3 = [2, 4, 6, 8, 10];
+console.log(arr3.every(n => n % 2 === 0));
+
+// Every (All Long Words)
+const arr4 = ["elephant", "giraffe", "hippopotamus"];
+console.log(arr4.every(w => w.length > 5));
+
+// Find First Even
+const arr5 = [1, 3, 5, 7, 8];
+console.log(arr5.find(n => n % 2 === 0));
+
+// Find Long Word
+const arr6 = ["apple", "banana", "cherry", "date"];
+console.log(arr6.find(w => w.length > 5));
+
+// Find Index Even
+console.log(arr5.findIndex(n => n % 2 === 0));
+
+// Find Index Long Word
+console.log(arr6.findIndex(w => w.length > 5));
+
+// Simple Promise
+function delay(ms) {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("Hello, world!"), ms);
+  });
+}
+
+delay(2000).then(console.log);
+
+// Promise Chain
+function fetchData() {
+  return Promise.resolve({ id: 1, name: "Ali" });
+}
+
+fetchData().then(data => console.log(data));
+
+// Error Handling
+function fetchUserData() {
+  return new Promise((resolve, reject) => {
+    const user = { name: "Ali" };
+
+    if (!user.age) reject("Age missing");
+    else resolve(user);
+  });
+}
+
+fetchUserData()
+  .then(console.log)
+  .catch(console.log);
+
+// Network Request
+function getWeather() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const success = Math.random() > 0.5;
+
+      if (success) resolve("Sunny Weather");
+      else reject("Weather API failed");
+    }, 1000);
+  });
+}
+
+getWeather()
+  .then(console.log)
+  .catch(console.log);
+
+  // Say Hello
+async function sayHello() {
+  const msg = await delay(2000);
+  console.log(msg);
+}
+
+sayHello();
+
+// Get User Data
+async function getUserData() {
+  try {
+    const data = await fetchUserData();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+getUserData();
+
+// Fetch User + Posts
+function fetchUser() {
+  return Promise.resolve({ id: 1, name: "Ali", age: 20 });
+}
+
+function fetchPosts() {
+  return Promise.resolve(["Post 1", "Post 2", "Post 3"]);
+}
+
+async function getUserAndPosts() {
+  const user = await fetchUser();
+  const posts = await fetchPosts(user.id);
+
+  console.log(user);
+  console.log(posts);
+}
+
+getUserAndPosts();
+
+// Error Handling
+async function getUserInfo() {
+  try {
+    const user = await fetchUser();
+    if (!user) throw new Error("User not found");
+    console.log(user);
+  } catch (err) {
+    console.log(err.message);
+  }
+}
+
+getUserInfo();
+
+// API Calls
+function apiCall() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(Math.floor(Math.random() * 100));
+    }, Math.random() * 1000);
+  });
+}
+
+async function getData() {
+  try {
+    const a = await apiCall();
+    console.log(a);
+
+    const b = await apiCall();
+    console.log(b);
+
+    const c = await apiCall();
+    console.log(c);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+getData();
